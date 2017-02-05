@@ -1,4 +1,5 @@
 var commonjs = require('rollup-plugin-commonjs');
+var nodeResolve = require('rollup-plugin-node-resolve');
 
 module.exports = {
     entry: './lib/browser.js',
@@ -8,5 +9,9 @@ module.exports = {
     moduleName: 'tarantino',
     plugins: [
         commonjs(),
+        nodeResolve({
+          jsnext: true,
+          main: true
+        }),
     ],
 };

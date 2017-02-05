@@ -28,6 +28,7 @@
     "request": "^2.79.0",
     "rollup": "^0.36.4",
     "rollup-plugin-commonjs": "^5.0.5",
+    "rollup-plugin-node-resolve": "^2.0.0",
     "rollup-plugin-uglify": "^1.0.1",
     "uglify-js": "^2.7.4",
     "vows": "^0.8.1"
@@ -48,5 +49,8 @@
     "test-hash": "opn ./test/browser/routes-harness.html",
     "preversion": "npm run -s build",
     "version": "git add -A build"
+  },
+  "dependencies": {
+    "html5-history-api": "^4.2.7"
   }
 }
