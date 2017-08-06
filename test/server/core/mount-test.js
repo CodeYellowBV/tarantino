@@ -85,6 +85,18 @@ vows.describe('tarantino/core/mount').addBatch({
           '/api');
 
           assertRoute(dogs, ['api', 'dogs', 'on'], router.routes);
+        },
+
+        "should fix unterminated RegExp groups": function(router) {
+          function cat () { }
+
+          router.mount({
+            '/(nyan/)?cat': {
+              on: cat
+            }
+          });
+
+          assertRoute(cat, ['(nyan/)?cat', 'on'], router.routes);
         }
       }
     },
